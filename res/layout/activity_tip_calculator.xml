@@ -6,66 +6,86 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".TipCalculator" >
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="22dp"
-        android:layout_toRightOf="@+id/textView1"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="70dp"
-        android:text="Small Text"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+    tools:context=".TipCalculatorActivity" >
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/et_bill_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:ems="10"
+        android:hint="@string/hint_enter_total"
         android:inputType="numberDecimal" >
 
         <requestFocus />
     </EditText>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btn_15percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Button" />
+        android:onClick="onCalculate"
+        android:text="@string/label_15percent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_20percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_toRightOf="@+id/button1"
-        android:text="Button" />
+        android:layout_alignBaseline="@+id/btn_15percent"
+        android:layout_alignBottom="@+id/btn_15percent"
+        android:layout_toRightOf="@+id/btn_15percent"
+        android:text="@string/label_20percent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_10percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_toLeftOf="@+id/button1"
-        android:text="Button" />
+        android:layout_alignBaseline="@+id/btn_15percent"
+        android:layout_alignBottom="@+id/btn_15percent"
+        android:layout_toLeftOf="@+id/btn_15percent"
+        android:text="@string/label_10percent" />
+
+    <RelativeLayout
+        android:id="@+id/tipAmountSummary"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_15percent"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/btn_10percent" >
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_currency_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tipAmountSummary"
+        android:layout_centerHorizontal="true"
+        android:text="@string/txt_currency_symbol"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_currency_symbol"
+        android:layout_alignBottom="@+id/tv_currency_symbol"
+        android:layout_toRightOf="@+id/tv_currency_symbol"
+        android:text="@string/txt_tip_amount"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tv_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_currency_symbol"
+        android:layout_alignBottom="@+id/tv_currency_symbol"
+        android:layout_alignRight="@+id/btn_10percent"
+        android:text="@string/txt_label_amount"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
