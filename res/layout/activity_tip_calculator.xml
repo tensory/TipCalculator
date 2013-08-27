@@ -38,6 +38,7 @@
         android:layout_alignBaseline="@+id/btn_15percent"
         android:layout_alignBottom="@+id/btn_15percent"
         android:layout_toRightOf="@+id/btn_15percent"
+        android:onClick="onCalculate"
         android:text="@string/label_20percent" />
 
     <Button
@@ -47,6 +48,7 @@
         android:layout_alignBaseline="@+id/btn_15percent"
         android:layout_alignBottom="@+id/btn_15percent"
         android:layout_toLeftOf="@+id/btn_15percent"
+        android:onClick="onCalculate"
         android:text="@string/label_10percent" />
 
     <RelativeLayout
